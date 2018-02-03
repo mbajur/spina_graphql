@@ -5,6 +5,8 @@ SpinaGraphql::SpinaSchema = GraphQL::Schema.define do
       return SpinaGraphql::Types::StructureType
     when 'Spina::Photo'
       return SpinaGraphql::Types::PhotoType
+    when 'Spina::PhotoCollection'
+      return SpinaGraphql::Types::PhotoCollectionType
     else
       return SpinaGraphql::Types::TextType
     end

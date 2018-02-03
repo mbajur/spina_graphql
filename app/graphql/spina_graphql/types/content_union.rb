@@ -4,6 +4,7 @@ SpinaGraphql::Types::ContentUnion = GraphQL::UnionType.define do
   possible_types [
     SpinaGraphql::Types::StructureType,
     SpinaGraphql::Types::TextType,
-    SpinaGraphql::Types::PhotoType
+    SpinaGraphql::Types::PhotoType,
+    SpinaGraphql::Types::PhotoCollectionType,
   ]
 end
