@@ -33,6 +33,13 @@ After that, mount it in your root app:
       mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/api/graphql"
     end
 
+## To do
+- [ ] Tests
+- [ ] All the models
+- [ ] Queries optimalization
+- [ ] General authorization
+- [ ] Specific fields / connections authorization
+
 ## Contributing
 Contribution directions go here.
 
