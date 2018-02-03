@@ -20,6 +20,4 @@ Gem::Specification.new do |s|
   s.add_dependency "graphql", "~> 1.7.9"
   s.add_dependency "spina", "~> 0.12.0"
   s.add_dependency "graphiql-rails"
-
-  s.add_development_dependency "pg"
 end
