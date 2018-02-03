@@ -39,6 +39,7 @@ After that, mount it in your root app:
 - [ ] Queries optimalization
 - [ ] General authorization
 - [ ] Specific fields / connections authorization
+- [ ] Mutations
 
 ## Contributing
 Contribution directions go here.
