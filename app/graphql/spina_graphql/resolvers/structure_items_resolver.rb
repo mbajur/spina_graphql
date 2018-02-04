@@ -1,5 +1,5 @@
 class SpinaGraphql::Resolvers::StructureItemsResolver
   def call(obj, args, ctx)
-    obj.structure_items
+    obj ? obj.structure_items : Spina::StructureItem.all
   end
 end
