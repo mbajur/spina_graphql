@@ -1,4 +1,5 @@
 require 'spina'
+require 'pg'
 
 module SpinaGraphql
   class Engine < ::Rails::Engine
