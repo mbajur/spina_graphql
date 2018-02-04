@@ -13,6 +13,7 @@ jobs:
            PGUSER: root
            DBNAME: circle_test
            DATABASE_URL: postgresql://root@localhost:5432/circle_test
+           BACKTRACE: blegga
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
