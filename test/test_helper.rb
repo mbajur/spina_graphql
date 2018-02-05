@@ -15,6 +15,7 @@ module AroundEachTest
     super
     Spina::Page.delete_all
     Spina::PageTranslation.delete_all
+    Spina::Navigation.delete_all
   end
 end
 
