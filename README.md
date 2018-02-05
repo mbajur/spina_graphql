@@ -1,5 +1,5 @@
 # SpinaGraphql
-GraphQL plugin for Spina CMS. 
+GraphQL plugin for Spina CMS.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -22,11 +22,11 @@ $ gem install spina_graphql
 To mount SpinaGraphql inside your rails/spina application, add the following line to your routes file:
 
     mount SpinaGraphql::Engine, at: "/api"
-    
+
 We're not including GraphiQL gem with SpinaGraphql so, if you want to use it, you need add it on your own:
 
     gem 'graphiql-rails', groups: [:development]
-    
+
 After that, mount it in your root app:
 
     if Rails.env.development?
@@ -34,11 +34,11 @@ After that, mount it in your root app:
     end
 
 ## To do
-- [ ] Tests
+- [*] Tests
 - [ ] All the models
 - [ ] Queries optimalization
-- [ ] General authorization
-- [ ] Specific fields / connections authorization
+- [*] General authorization
+- [*] Specific fields / connections authorization
 - [ ] Mutations
 
 ## Contributing

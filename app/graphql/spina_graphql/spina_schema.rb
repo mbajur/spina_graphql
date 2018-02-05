@@ -18,4 +18,11 @@ SpinaGraphql::SpinaSchema = GraphQL::Schema.define do
   rescue_from ActiveRecord::RecordNotFound do
     'Record not found'
   end
+
+  use GraphQL::Guard.new(
+    policy_object: SpinaGraphql::SpinaSchemaPolicy,
+    not_authorized: ->(type, field) do
+      GraphQL::ExecutionError.new("Not authorized to access #{type}.#{field}")
+    end
+  )
 end

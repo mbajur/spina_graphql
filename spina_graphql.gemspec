@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.1.4"
   s.add_dependency "graphql", "~> 1.7.9"
   s.add_dependency "spina", "~> 0.12.0"
-  s.add_dependency "graphiql-rails"
+  s.add_dependency "graphql-guard"
   s.add_dependency 'mobility', '>= 0.3.6'
 
   s.add_development_dependency "minitest", "5.10.3"
