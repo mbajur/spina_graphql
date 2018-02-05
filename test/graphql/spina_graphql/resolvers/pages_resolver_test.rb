@@ -6,18 +6,8 @@ describe SpinaGraphql::Resolvers::PagesResolver do
     @resolver = SpinaGraphql::Resolvers::PagesResolver.new
   end
 
-  describe 'when object is present' do
-    it 'returns page parts for object' do
-      obj = MiniTest::Mock.new
-      obj.expect :pages, nil
-      @resolver.call(obj, nil, nil)
-
-      obj.verify
-    end
-  end
-
   describe 'when object is not present' do
-    it 'returns all page parts' do
+    it 'returns all pages' do
       mock = MiniTest::Mock.new
       mock_args = MiniTest::Mock.new
 
