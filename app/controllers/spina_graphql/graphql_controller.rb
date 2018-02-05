@@ -4,10 +4,18 @@ class SpinaGraphql::GraphqlController < ApplicationController
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      current_spina_user: current_spina_user,
+      current_theme: current_theme,
+      current_account: current_account
     }
-    result = ::SpinaGraphql::SpinaSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+
+    result = ::SpinaGraphql::SpinaSchema.execute(
+      query,
+      variables: variables,
+      context: context,
+      operation_name: operation_name
+    )
+
     render json: result
   end
 
@@ -30,4 +38,19 @@ class SpinaGraphql::GraphqlController < ApplicationController
       raise ArgumentError, "Unexpected parameter: #{ambiguous_param}"
     end
   end
+
+  def current_theme
+    @current_theme = ::Spina::Theme.find_by_name(current_account.theme)
+  end
+  helper_method :current_theme
+
+  def current_spina_user
+    @current_spina_user ||= ::Spina::User.where(id: session[:user_id]).first if session[:user_id]
+  end
+  helper_method :current_spina_user
+
+  def current_account
+    @current_account ||= ::Spina::Account.first
+  end
+  helper_method :current_account
 end

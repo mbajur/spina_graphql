@@ -16,6 +16,7 @@ SpinaGraphql::Types::PageType = GraphQL::ObjectType.define do
   field :position, types.Int
   field :active, types.Boolean
   field :materialized_path, types.String
+  field :title, types.String
 
   field :content, SpinaGraphql::Types::ContentUnion do
     argument :key, !types.String
