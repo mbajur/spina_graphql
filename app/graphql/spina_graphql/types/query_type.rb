@@ -4,4 +4,5 @@ SpinaGraphql::Types::QueryType = GraphQL::ObjectType.define do
   # They will be entry points for queries on your schema.
 
   connection :pages, SpinaGraphql::Fields::PagesField, max_page_size: 25
+  field :pageById, SpinaGraphql::Fields::PageByIdField
 end

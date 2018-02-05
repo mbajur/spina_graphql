@@ -1,4 +1,7 @@
 SpinaGraphql::SpinaSchema = GraphQL::Schema.define do
+  mutation(SpinaGraphql::Types::MutationType)
+  query(SpinaGraphql::Types::QueryType)
+
   resolve_type ->(type, obj, ctx) do
     case obj.class.name
     when 'Spina::Structure'
@@ -12,6 +15,7 @@ SpinaGraphql::SpinaSchema = GraphQL::Schema.define do
     end
   end
 
-  mutation(SpinaGraphql::Types::MutationType)
-  query(SpinaGraphql::Types::QueryType)
+  rescue_from ActiveRecord::RecordNotFound do
+    'Record not found'
+  end
 end
