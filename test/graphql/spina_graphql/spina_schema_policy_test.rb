@@ -23,6 +23,38 @@ describe SpinaGraphql::SpinaSchemaPolicy do
     end
   end
 
+  describe 'Query.navigationById' do
+    it 'when user is not present, returns false' do
+      page = SpinaGraphql::Types::QueryType.field_with_guard('navigationById', @policy)
+      result = page.guard(nil, nil, {})
+
+      assert_equal false, result
+    end
+
+    it 'when user is present, returns true' do
+      page = SpinaGraphql::Types::QueryType.field_with_guard('navigationById', @policy)
+      result = page.guard(nil, nil, current_spina_user: Spina::User.new)
+
+      assert_equal true, result
+    end
+  end
+
+  describe 'Query.navigations' do
+    it 'when user is not present, returns false' do
+      page = SpinaGraphql::Types::QueryType.field_with_guard('navigations', @policy)
+      result = page.guard(nil, nil, {})
+
+      assert_equal false, result
+    end
+
+    it 'when user is present, returns true' do
+      page = SpinaGraphql::Types::QueryType.field_with_guard('navigations', @policy)
+      result = page.guard(nil, nil, current_spina_user: Spina::User.new)
+
+      assert_equal true, result
+    end
+  end
+
   describe 'Spina_Page.active' do
     it 'when user is not present, returns false' do
       page = SpinaGraphql::Types::PageType.field_with_guard('active', @policy)
