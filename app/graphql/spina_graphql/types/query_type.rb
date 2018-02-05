@@ -5,4 +5,5 @@ SpinaGraphql::Types::QueryType = GraphQL::ObjectType.define do
 
   connection :pages, SpinaGraphql::Fields::PagesField, max_page_size: 25
   field :pageById, SpinaGraphql::Fields::PageByIdField
+  field :pageByMaterializedPath, SpinaGraphql::Fields::PageByMaterializedPathField
 end
