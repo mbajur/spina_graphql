@@ -2,14 +2,16 @@ class SpinaGraphql::SpinaSchemaPolicy
   RULES = {
     SpinaGraphql::Types::QueryType => {
       '*': ->(obj, args, ctx) { true },
-      pageById: ->(obj, args, ctx) { ctx[:current_spina_user].present? }
+      pageById:       ->(obj, args, ctx) { user_signed_in?(ctx) },
+      navigationById: ->(obj, args, ctx) { user_signed_in?(ctx) },
+      navigations:    ->(obj, args, ctx) { user_signed_in?(ctx) }
     },
 
     SpinaGraphql::Types::PageType => {
       '*':       ->(obj, args, ctx) { true },
       active:    ->(obj, args, ctx) { user_signed_in?(ctx) },
-      deletable: ->(obj, args, ctx) { ctx[:current_spina_user].present? },
-      draft:     ->(obj, args, ctx) { ctx[:current_spina_user].present? }
+      deletable: ->(obj, args, ctx) { user_signed_in?(ctx) },
+      draft:     ->(obj, args, ctx) { user_signed_in?(ctx) }
     },
   }
 

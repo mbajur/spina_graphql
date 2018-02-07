@@ -9,4 +9,6 @@ SpinaGraphql::Types::NavigationType = GraphQL::ObjectType.define do
 
   field :created_at, SpinaGraphql::Types::DateTimeType
   field :updated_at, SpinaGraphql::Types::DateTimeType
+
+  connection :navigation_items, SpinaGraphql::Fields::NavigationItemsField
 end
