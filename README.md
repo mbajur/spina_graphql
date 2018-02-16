@@ -36,7 +36,7 @@ After that, mount it in your root app:
 ## To do
 - [x] Tests
 - [ ] All the models
-- [ ] Queries optimalization
+- [ ] Queries optimization
 - [x] General authorization
 - [x] Specific fields / connections authorization
 - [ ] Mutations
